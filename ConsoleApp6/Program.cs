@@ -70,16 +70,15 @@ namespace ConsoleApp6
         static void ShowUsers(UsersRepository usersRepository)
         {
             Console.Clear();
-            var users = usersRepository.GetAll();
 
-            if (users.Count == 0)
+            if (usersRepository.GetAll().Count == 0)
             {
                 Console.WriteLine("The list is empty");
                 return;
             }
 
             Console.WriteLine("The list of users: ");
-            foreach (var user in users)
+            foreach (var user in usersRepository.GetAll()) {
             {
                 Console.WriteLine($"ID: {user.Id}, Name: {user.Name}, Age: {user.Age}, Email: {user.Email}");
             }
